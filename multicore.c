@@ -26,10 +26,6 @@ void pinInit(uint firstLED, uint secondLED, uint trigPin, uint echoPin) {
 
 void secondCoreCode() {
     while(1) {
-        gpio_put(LED1_PIN, 1);
-        sleep_ms(100);
-        gpio_put(LED1_PIN, 0);
-        sleep_ms(100);
         if(TOO_CLOSE == true) gpio_put(LED2_PIN, 1);
         else gpio_put(LED2_PIN, 0);
         printf("Second core done\n");
@@ -65,6 +61,6 @@ int main() {
         if(cmLength < 20) TOO_CLOSE = true;
         else TOO_CLOSE = false;
         printf("First core done.\n");
-        sleep_ms(100);
+        sleep_ms(10);
     }
 }
