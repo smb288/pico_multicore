@@ -2093,6 +2093,68 @@ CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc
 CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\platform_defs.h
 CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Pico\pico-sdk\src\common\pico_base\include\pico\error.h
 CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Pico\pico-sdk\src\rp2_common\pico_malloc\include\pico\malloc.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\mutex.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\lock_core.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Pico\pico-sdk\src\common\pico_time\include\pico\time.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Pico\pico-sdk\src\rp2_common\hardware_timer\include\hardware\timer.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\timer.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Pico\pico-sdk\src\rp2_common\hardware_base\include\hardware\address_mapped.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\addressmap.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\timer.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Pico\pico-sdk\src\rp2_common\hardware_sync\include\hardware\sync.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\sio.h
+
+
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\pico_multicore\include\pico\multicore.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_base\include\pico\assert.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\assert.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\_ansi.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\newlib.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\_newlib_version.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\config.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\ieeefp.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\features.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\stdint.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\_default_types.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_intsup.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_stdint.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\sync.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\sem.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\lock_core.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_base\include\pico.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: generated\pico_base\pico\version.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_base\include\pico\config.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: generated\pico_base\pico\config_autogen.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\boards\include\boards\pico.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\cmsis\include\cmsis\rename_exceptions.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\pico_platform\include\pico\platform.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\cdefs.h"
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\platform_defs.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_base\include\pico\error.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_time\include\pico\time.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\hardware_timer\include\hardware\timer.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\timer.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\hardware_base\include\hardware\address_mapped.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\addressmap.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\timer.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\hardware_sync\include\hardware\sync.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\sio.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\mutex.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\critical_section.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\sio.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\interp.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\hardware_irq\include\hardware\irq.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\intctrl.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\m0plus.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\scb.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\psm.h
+CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\hardware_claim\include\hardware\claim.h
 
 
 CMakeFiles\multicore.dir\C_\Pico\pico-sdk\src\rp2_common\pico_platform\platform.c.obj: C:\Pico\pico-sdk\src\rp2_common\pico_platform\platform.c
@@ -2805,6 +2867,13 @@ CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\hardwa
 CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\uart.h
 CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\uart.h
 CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h
+CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\pico_multicore\include\pico\multicore.h
+CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\sync.h
+CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\sem.h
+CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\lock_core.h
+CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\hardware_sync\include\hardware\sync.h
+CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\mutex.h
+CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\critical_section.h
 
 
 
@@ -2813,6 +2882,8 @@ CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\pico_s
 C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\tbman.h:
 
 C:\Pico\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h:
+
+C:\Pico\pico-sdk\src\rp2_common\pico_multicore\include\pico\multicore.h:
 
 "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\_types.h":
 
@@ -3199,6 +3270,8 @@ C:\Pico\pico-sdk\src\rp2_common\pico_float\include\pico\float.h:
 C:\Pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c:
 
 C:\Pico\pico-sdk\src\rp2_common\pico_malloc\include\pico\malloc.h:
+
+C:\Pico\pico-sdk\src\rp2_common\pico_multicore\multicore.c:
 
 C:\Pico\pico-sdk\src\rp2_common\pico_platform\platform.c:
 
