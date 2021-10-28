@@ -11,7 +11,8 @@ add_executable(multicore
 )
 
 target_link_libraries(multicore pico_stdlib 
-    hardware_uart
+    hardware_uart 
+    hardware_gpio
     pico_multicore)
 
 pico_enable_stdio_usb(multicore 1)
