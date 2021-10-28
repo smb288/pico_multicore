@@ -4,31 +4,75 @@
 #include "hardware/uart.h"
 #include "hardware/gpio.h"
 
-const int LED1_PIN = 0, 
-          LED2_PIN = 1,
+const int MOTOR1_FW = 0, 
+          MOTOR1_BW = 1,
           TRIG_PIN = 2,
-          ECHO_PIN = 3;
+          ECHO_PIN = 3,
+          MOTOR2_FW = 4,
+          MOTOR2_BW = 5;
 
 bool TOO_CLOSE = false;
 int timeout = 26100;
 
-void pinInit(uint firstLED, uint secondLED, uint trigPin, uint echoPin) {
-    gpio_init(firstLED);
-    gpio_init(secondLED);
+void pinInit(uint firstMotorF, uint firstMotorB, uint trigPin, uint echoPin,
+    uint secondMotorF, uint secondMotorB) {
+
+    gpio_init(firstMotorF);
+    gpio_init(firstMotorB);
+    gpio_init(secondMotorF);
+    gpio_init(secondMotorB);
+
     gpio_init(trigPin);
     gpio_init(echoPin);
 
-    gpio_set_dir(firstLED, GPIO_OUT);
-    gpio_set_dir(secondLED, GPIO_OUT);
+    gpio_set_dir(firstMotorF, GPIO_OUT);
+    gpio_set_dir(firstMotorB, GPIO_OUT);
+    gpio_set_dir(secondMotorF, GPIO_OUT);
+    gpio_set_dir(secondMotorB, GPIO_OUT);
+
     gpio_set_dir(trigPin, GPIO_OUT);
     gpio_set_dir(echoPin, GPIO_IN);
 }
 
+void forwards() {
+    gpio_put(MOTOR1_FW, 1);
+    gpio_put(MOTOR1_BW, 0);
+    gpio_put(MOTOR2_FW, 1);
+    gpio_put(MOTOR2_BW, 0);
+}
+
+void backwards() {
+    gpio_put(MOTOR1_FW, 0);
+    gpio_put(MOTOR1_BW, 1);
+    gpio_put(MOTOR2_FW, 0);
+    gpio_put(MOTOR2_BW, 1);
+}
+
+void stop_motors() {
+    gpio_put(MOTOR1_FW, 0);
+    gpio_put(MOTOR1_BW, 0);
+    gpio_put(MOTOR2_FW, 0);
+    gpio_put(MOTOR2_BW, 0);
+}
+
+void turn_right() {
+    gpio_put(MOTOR1_FW, 1);
+    gpio_put(MOTOR1_BW, 0);
+    gpio_put(MOTOR2_FW, 0);
+    gpio_put(MOTOR2_BW, 0);
+}
+
+void turn_left() {
+    gpio_put(MOTOR1_FW, 0);
+    gpio_put(MOTOR1_BW, 0);
+    gpio_put(MOTOR2_FW, 1);
+    gpio_put(MOTOR2_BW, 0);
+}
+
 void secondCoreCode() {
     while(1) {
-        if(TOO_CLOSE == true) gpio_put(LED2_PIN, 1);
-        else gpio_put(LED2_PIN, 0);
-        printf("Second core done\n");
+        if(TOO_CLOSE == true) stop_motors();
+        else forwards();
     }
 }
 
@@ -37,9 +81,11 @@ int main() {
     stdio_init_all();
 
     //Initialize pin numbers
-    pinInit(LED1_PIN, LED2_PIN, TRIG_PIN, ECHO_PIN);
+    pinInit(MOTOR1_FW, MOTOR1_BW, TRIG_PIN, ECHO_PIN, 
+            MOTOR2_FW, MOTOR2_BW);
     
-    //Launch second core
+    //Launch second core and set clock to 250MHz
+    set_sys_clock_khz(250000, true);
     multicore_launch_core1(secondCoreCode);
 
     //First core code
@@ -60,7 +106,6 @@ int main() {
         printf("%d cm\n", cmLength);
         if(cmLength < 20) TOO_CLOSE = true;
         else TOO_CLOSE = false;
-        printf("First core done.\n");
         sleep_ms(10);
     }
 }
