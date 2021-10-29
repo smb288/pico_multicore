@@ -114,6 +114,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "C:/Pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/include"
   "C:/Pico/pico-sdk/src/rp2_common/pico_unique_id/include"
   "C:/Pico/pico-sdk/src/rp2_common/hardware_flash/include"
+  "C:/Pico/pico-sdk/src/rp2_common/hardware_pwm/include"
   "C:/Pico/pico-sdk/src/rp2_common/pico_multicore/include"
   )
 

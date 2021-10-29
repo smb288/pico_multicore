@@ -3,6 +3,7 @@
 #include "pico/multicore.h"
 #include "hardware/uart.h"
 #include "hardware/gpio.h"
+#include "hardware/pwm.h"
 
 const int MOTOR1_FW = 0, 
           MOTOR1_BW = 1,
@@ -71,8 +72,9 @@ void turn_left() {
 
 void secondCoreCode() {
     while(1) {
-        if(TOO_CLOSE == true) stop_motors();
+        if(TOO_CLOSE) stop_motors();
         else forwards();
+        sleep_us(10);
     }
 }
 
@@ -100,12 +102,12 @@ int main() {
         while (gpio_get(ECHO_PIN) == 1) {
             width++;
             sleep_us(1);
-            if (width > timeout) return 0;
         }
         int cmLength = width / 29 / 2;
-        printf("%d cm\n", cmLength);
+
         if(cmLength < 20) TOO_CLOSE = true;
         else TOO_CLOSE = false;
         sleep_ms(10);
     }
+    return 0;
 }

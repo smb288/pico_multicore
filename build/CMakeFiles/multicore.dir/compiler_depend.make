@@ -2874,6 +2874,9 @@ CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\
 CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\hardware_sync\include\hardware\sync.h
 CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\mutex.h
 CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\common\pico_sync\include\pico\critical_section.h
+CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\rp2_common\hardware_pwm\include\hardware\pwm.h
+CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\pwm.h
+CMakeFiles\multicore.dir\multicore.c.obj: C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\pwm.h
 
 
 
@@ -3113,6 +3116,8 @@ C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\usb.h:
 
 C:\Pico\pico-sdk\src\rp2_common\hardware_irq\include\hardware\irq.h:
 
+C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\pwm.h:
+
 C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\intctrl.h:
 
 C:\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\m0plus.h:
@@ -3162,6 +3167,8 @@ C:\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\scb.h:
 C:\Pico\pico-sdk\src\common\pico_time\include\pico\timeout_helper.h:
 
 C:\Pico\pico-sdk\src\common\pico_util\pheap.c:
+
+C:\Pico\pico-sdk\src\rp2_common\hardware_pwm\include\hardware\pwm.h:
 
 C:\Pico\pico-sdk\src\common\pico_util\queue.c:
 
@@ -3316,3 +3323,5 @@ C:\Pico\pico-sdk\src\common\pico_stdlib\include\pico\stdlib.h:
 C:\Pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c:
 
 ..\multicore.c:
+
+C:\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\pwm.h:

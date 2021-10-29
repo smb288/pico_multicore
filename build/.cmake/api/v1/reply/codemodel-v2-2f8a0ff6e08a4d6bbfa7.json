@@ -912,7 +912,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ELF2UF2Build::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ELF2UF2Build-Debug-cbef9f11e7bca00c91c7.json",
+					"jsonFile" : "target-ELF2UF2Build-Debug-6353fcf7eb27127bc5e0.json",
 					"name" : "ELF2UF2Build",
 					"projectIndex" : 0
 				},
@@ -940,7 +940,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "multicore::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-multicore-Debug-c2cb3012902596ad472e.json",
+					"jsonFile" : "target-multicore-Debug-c474997112e29ab3291b.json",
 					"name" : "multicore",
 					"projectIndex" : 0
 				}

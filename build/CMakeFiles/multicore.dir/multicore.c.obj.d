@@ -70,4 +70,7 @@ CMakeFiles\multicore.dir\multicore.c.obj: \
  C:\Pico\pico-sdk\src\common\pico_sync\include/pico/lock_core.h \
  C:\Pico\pico-sdk\src\rp2_common\hardware_sync\include/hardware/sync.h \
  C:\Pico\pico-sdk\src\common\pico_sync\include/pico/mutex.h \
- C:\Pico\pico-sdk\src\common\pico_sync\include/pico/critical_section.h
+ C:\Pico\pico-sdk\src\common\pico_sync\include/pico/critical_section.h \
+ C:\Pico\pico-sdk\src\rp2_common\hardware_pwm\include/hardware/pwm.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/pwm.h \
+ C:\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/pwm.h

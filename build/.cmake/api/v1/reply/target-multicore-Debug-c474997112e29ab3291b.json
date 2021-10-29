@@ -47,7 +47,7 @@
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 21,
+				"line" : 22,
 				"parent" : 0
 			},
 			{
@@ -464,6 +464,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "C:/Pico/pico-sdk/src/rp2_common/hardware_flash/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Pico/pico-sdk/src/rp2_common/hardware_pwm/include"
 				},
 				{
 					"backtrace" : 2,
@@ -901,6 +905,10 @@
 				},
 				{
 					"backtrace" : 2,
+					"path" : "C:/Pico/pico-sdk/src/rp2_common/hardware_pwm/include"
+				},
+				{
+					"backtrace" : 2,
 					"path" : "C:/Pico/pico-sdk/src/rp2_common/pico_multicore/include"
 				}
 			],
@@ -1303,6 +1311,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "C:/Pico/pico-sdk/src/rp2_common/hardware_flash/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Pico/pico-sdk/src/rp2_common/hardware_pwm/include"
 				},
 				{
 					"backtrace" : 2,
