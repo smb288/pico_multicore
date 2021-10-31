@@ -4,6 +4,7 @@
 #include "hardware/uart.h"
 #include "hardware/gpio.h"
 #include "hardware/pwm.h"
+#include "hardware/timer.h"
 
 const int MOTOR1_FW = 0, 
           MOTOR1_BW = 1,
@@ -12,7 +13,8 @@ const int MOTOR1_FW = 0,
           MOTOR2_FW = 4,
           MOTOR2_BW = 5;
 
-bool TOO_CLOSE = false;
+bool TOO_CLOSE = false,
+     START_CYCLE = true;
 int timeout = 26100;
 
 void pinInit(uint firstMotorF, uint firstMotorB, uint trigPin, uint echoPin,
@@ -72,9 +74,11 @@ void turn_left() {
 
 void secondCoreCode() {
     while(1) {
-        if(TOO_CLOSE) stop_motors();
-        else forwards();
-        sleep_us(10);
+        if(!START_CYCLE) {
+            if(TOO_CLOSE) turn_right();
+            else forwards();
+            sleep_us(10);
+        }
     }
 }
 
@@ -96,17 +100,21 @@ int main() {
         sleep_us(10);
         gpio_put(TRIG_PIN, 0);
 
-        uint width = 0;
+        uint64_t width = 0;
 
         while (gpio_get(ECHO_PIN) == 0) tight_loop_contents();
+        absolute_time_t startTime = get_absolute_time();
         while (gpio_get(ECHO_PIN) == 1) {
             width++;
             sleep_us(1);
         }
-        int cmLength = width / 29 / 2;
+        absolute_time_t endTime = get_absolute_time();
+        uint64_t timeDiff = absolute_time_diff_us(startTime, endTime);
+        int cmLength = timeDiff / 29 / 2;
 
         if(cmLength < 20) TOO_CLOSE = true;
         else TOO_CLOSE = false;
+        START_CYCLE = false;
         sleep_ms(10);
     }
     return 0;
