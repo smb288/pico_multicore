@@ -11,7 +11,7 @@ const int MOTOR1_FW = 12,
           TRIG_PIN = 2,
           ECHO_PIN = 3,
           MOTOR2_FW = 14,
-          MOTOR2_BW = 15;
+          MOTOR2_BW = 15,
           LED_STATUS = 25;
 
 bool TOO_CLOSE = false,
