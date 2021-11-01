@@ -12,10 +12,27 @@ const int MOTOR1_FW = 12,
           ECHO_PIN = 3,
           MOTOR2_FW = 14,
           MOTOR2_BW = 15;
+          LED_STATUS = 25;
 
 bool TOO_CLOSE = false,
      START_CYCLE = true;
-int timeout = 26100;
+
+void startUp(uint ledPin) {
+    gpio_init(ledPin);
+    gpio_set_dir(ledPin, GPIO_OUT);
+    
+    gpio_put(ledPin, 1);
+    sleep_ms(1000);
+    gpio_put(ledPin, 0);
+    sleep_ms(1000);
+    gpio_put(ledPin, 1);
+    sleep_ms(1000);
+    gpio_put(ledPin, 0);
+    sleep_ms(1000);
+    gpio_put(ledPin, 1);
+    sleep_ms(1000);
+    gpio_put(ledPin, 0);
+}
 
 void pinInit(uint firstMotorF, uint firstMotorB, uint trigPin, uint echoPin,
     uint secondMotorF, uint secondMotorB) {
@@ -83,16 +100,21 @@ void secondCoreCode() {
 }
 
 int main() {
-
     stdio_init_all();
 
     //Initialize pin numbers
     pinInit(MOTOR1_FW, MOTOR1_BW, TRIG_PIN, ECHO_PIN, 
             MOTOR2_FW, MOTOR2_BW);
     
+
     //Launch second core and set clock to 250MHz
     set_sys_clock_khz(250000, true);
     multicore_launch_core1(secondCoreCode);
+
+
+    //Five second start up delay
+    startUp(LED_STATUS);
+
 
     //First core code
     while(1) {
@@ -112,10 +134,12 @@ int main() {
         uint64_t timeDiff = absolute_time_diff_us(startTime, endTime);
         int cmLength = timeDiff / 29 / 2;
 
-        if(cmLength < 20) TOO_CLOSE = true;
+        if(cmLength < 40) TOO_CLOSE = true;
         else TOO_CLOSE = false;
+        //printf("%d cm", cmLength);
+        
         START_CYCLE = false;
-        sleep_ms(10);
+        sleep_us(1);
     }
     return 0;
 }
