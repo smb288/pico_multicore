@@ -6,12 +6,12 @@
 #include "hardware/pwm.h"
 #include "hardware/timer.h"
 
-const int MOTOR1_FW = 0, 
-          MOTOR1_BW = 1,
+const int MOTOR1_FW = 12, 
+          MOTOR1_BW = 13,
           TRIG_PIN = 2,
           ECHO_PIN = 3,
-          MOTOR2_FW = 4,
-          MOTOR2_BW = 5;
+          MOTOR2_FW = 14,
+          MOTOR2_BW = 15;
 
 bool TOO_CLOSE = false,
      START_CYCLE = true;
