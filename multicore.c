@@ -8,13 +8,17 @@
 
 const int MOTOR1_FW = 12, 
           MOTOR1_BW = 13,
-          TRIG_PIN = 2,
-          ECHO_PIN = 3,
+          TRIG_PIN1 = 0,
+          ECHO_PIN1 = 1,
+          TRIG_PIN2 = 2,
+          ECHO_PIN2 = 3,
+          TRIG_PIN3 = 4,
+          ECHO_PIN3 = 5,
           MOTOR2_FW = 14,
           MOTOR2_BW = 15,
           LED_STATUS = 25;
 
-bool TOO_CLOSE = false,
+bool TOO_CLOSE1 = false, TOO_CLOSE2 = false, TOO_CLOSE3 = false,
      START_CYCLE = true;
 
 void startUp(uint ledPin) {
@@ -34,24 +38,53 @@ void startUp(uint ledPin) {
     gpio_put(ledPin, 0);
 }
 
-void pinInit(uint firstMotorF, uint firstMotorB, uint trigPin, uint echoPin,
-    uint secondMotorF, uint secondMotorB) {
+void motorPinInit(uint firstMotorF, uint firstMotorB, uint secondMotorF, uint secondMotorB) {
 
     gpio_init(firstMotorF);
     gpio_init(firstMotorB);
     gpio_init(secondMotorF);
     gpio_init(secondMotorB);
 
-    gpio_init(trigPin);
-    gpio_init(echoPin);
 
     gpio_set_dir(firstMotorF, GPIO_OUT);
     gpio_set_dir(firstMotorB, GPIO_OUT);
     gpio_set_dir(secondMotorF, GPIO_OUT);
     gpio_set_dir(secondMotorB, GPIO_OUT);
+}
 
-    gpio_set_dir(trigPin, GPIO_OUT);
-    gpio_set_dir(echoPin, GPIO_IN);
+//function to initialize all the ultrasonic sensor pins
+void ultrasonicSensorPinInit(uint trigPin1, uint echoPin1, uint trigPin2, uint echoPin2, uint trigPin3, uint echoPin3) {
+    gpio_init(trigPin1);
+    gpio_init(echoPin1);
+    gpio_init(trigPin2);
+    gpio_init(echoPin2);
+    gpio_init(trigPin3);
+    gpio_init(echoPin3);
+
+    gpio_set_dir(trigPin1, GPIO_OUT);
+    gpio_set_dir(echoPin1, GPIO_IN);
+    gpio_set_dir(trigPin2, GPIO_OUT);
+    gpio_set_dir(echoPin2, GPIO_IN);
+    gpio_set_dir(trigPin3, GPIO_OUT);
+    gpio_set_dir(echoPin3, GPIO_IN);
+}
+
+//function so trigger the ultrasonic trig pins
+int ultrasonicSensorTrig(uint trigPin, uint echoPin){
+    gpio_put(trigPin, 1);
+    sleep_us(10);
+    gpio_put(trigPin, 0);
+
+    while (gpio_get(echoPin) == 0) tight_loop_contents();
+    absolute_time_t startTime = get_absolute_time();
+    while (gpio_get(echoPin) == 1) {
+            sleep_us(1);
+    }
+    absolute_time_t endTime = get_absolute_time();
+    uint64_t timeDiff = absolute_time_diff_us(startTime, endTime);
+    int cmLength = timeDiff / 29 / 2;
+
+    return cmLength;
 }
 
 void forwards() {
@@ -92,19 +125,22 @@ void turn_left() {
 void secondCoreCode() {
     while(1) {
         if(!START_CYCLE) {
-            if(TOO_CLOSE) turn_right();
+            if(TOO_CLOSE1) turn_right();
+            if(TOO_CLOSE2) turn_right();
+            if(TOO_CLOSE3) turn_left();
             else forwards();
             sleep_us(10);
         }
     }
 }
 
+
 int main() {
     stdio_init_all();
 
-    //Initialize pin numbers
-    pinInit(MOTOR1_FW, MOTOR1_BW, TRIG_PIN, ECHO_PIN, 
-            MOTOR2_FW, MOTOR2_BW);
+    //Initialize motor and ultrasonic sensor pin numbers
+    motorPinInit(MOTOR1_FW, MOTOR1_BW, MOTOR2_FW, MOTOR2_BW);
+    ultrasonicSensorPinInit(TRIG_PIN1, ECHO_PIN1, TRIG_PIN2, ECHO_PIN2, TRIG_PIN3, ECHO_PIN3);
     
 
     //Launch second core and set clock to 250MHz
@@ -115,26 +151,29 @@ int main() {
     //Five second start up delay
     startUp(LED_STATUS);
 
-
     //First core code
     while(1) {
-        gpio_put(TRIG_PIN, 1);
-        sleep_us(10);
-        gpio_put(TRIG_PIN, 0);
+        //trigger the trig pins
+        int leftDistance = ultrasonicSensorTrig(TRIG_PIN1, ECHO_PIN1);
+        int centerDistance = ultrasonicSensorTrig(TRIG_PIN2, ECHO_PIN2);
+        int rightDistance = ultrasonicSensorTrig(TRIG_PIN3, ECHO_PIN3);
 
-        while (gpio_get(ECHO_PIN) == 0) tight_loop_contents();
-        absolute_time_t startTime = get_absolute_time();
-        while (gpio_get(ECHO_PIN) == 1) sleep_us(1);
-
-        absolute_time_t endTime = get_absolute_time();
-        uint64_t timeDiff = absolute_time_diff_us(startTime, endTime);
-        int cmLength = timeDiff / 29 / 2;
-
-        if(cmLength < 40) TOO_CLOSE = true;
-        else TOO_CLOSE = false;
+        if(leftDistance < 40){
+            TOO_CLOSE1 = true;
+        }
+        else if(centerDistance < 40){
+            TOO_CLOSE2 = true;
+        }
+        else if(rightDistance < 40){
+            TOO_CLOSE3 = true;
+        }
+        else {
+            TOO_CLOSE1 = false, TOO_CLOSE2 = false, TOO_CLOSE3 = false;
+        }
 
         START_CYCLE = false;
         sleep_us(1);
+        //navigation code goes here
     }
     return 0;
 }
