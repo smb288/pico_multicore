@@ -18,7 +18,7 @@ const int MOTOR1_FW = 12,
           MOTOR2_BW = 15,
           LED_STATUS = 25;
 
-bool TOO_CLOSE = false,
+bool TOO_CLOSE1 = false, TOO_CLOSE2 = false, TOO_CLOSE3 = false,
      START_CYCLE = true;
 
 void startUp(uint ledPin) {
@@ -125,7 +125,9 @@ void turn_left() {
 void secondCoreCode() {
     while(1) {
         if(!START_CYCLE) {
-            if(TOO_CLOSE) turn_right();
+            if(TOO_CLOSE1) turn_right();
+            if(TOO_CLOSE2) turn_right();
+            if(TOO_CLOSE3) turn_left();
             else forwards();
             sleep_us(10);
         }
@@ -156,10 +158,21 @@ int main() {
         int centerDistance = ultrasonicSensorTrig(TRIG_PIN2, ECHO_PIN2);
         int rightDistance = ultrasonicSensorTrig(TRIG_PIN3, ECHO_PIN3);
 
-        printf("Distance from ultrasonic sensor 1: " + leftDistance + "cm");
-        printf("Distance from ultrasonic sensor 2: " + centerDistance + "cm");
-        printf("Distance from ultrasonic sensor 3: " + rightDistance + "cm");
+        if(leftDistance < 40){
+            TOO_CLOSE1 = true;
+        }
+        else if(centerDistance < 40){
+            TOO_CLOSE2 = true;
+        }
+        else if(rightDistance < 40){
+            TOO_CLOSE3 = true;
+        }
+        else {
+            TOO_CLOSE1 = false, TOO_CLOSE2 = false, TOO_CLOSE3 = false;
+        }
 
+        START_CYCLE = false;
+        sleep_us(1);
         //navigation code goes here
     }
     return 0;
