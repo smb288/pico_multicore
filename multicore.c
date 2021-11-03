@@ -122,22 +122,17 @@ int main() {
         sleep_us(10);
         gpio_put(TRIG_PIN, 0);
 
-        uint64_t width = 0;
-
         while (gpio_get(ECHO_PIN) == 0) tight_loop_contents();
         absolute_time_t startTime = get_absolute_time();
-        while (gpio_get(ECHO_PIN) == 1) {
-            width++;
-            sleep_us(1);
-        }
+        while (gpio_get(ECHO_PIN) == 1) sleep_us(1);
+
         absolute_time_t endTime = get_absolute_time();
         uint64_t timeDiff = absolute_time_diff_us(startTime, endTime);
         int cmLength = timeDiff / 29 / 2;
 
         if(cmLength < 40) TOO_CLOSE = true;
         else TOO_CLOSE = false;
-        //printf("%d cm", cmLength);
-        
+
         START_CYCLE = false;
         sleep_us(1);
     }
